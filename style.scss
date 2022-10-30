@@ -1,0 +1,335 @@
+@font-face {
+    font-family: 'Inter';
+    src: URL('assets/fonts/Inter-VariableFont_slnt\,wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'InterBold';
+    src: URL('assets/fonts/static/Inter-ExtraBold.ttf') format('truetype');
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter';
+    box-sizing: border-box;
+
+}
+
+$soft-orange: hsl(35, 77%, 62%);
+$soft-red: hsl(5, 85%, 63%);
+$off-white: hsl(36, 100%, 99%);
+$grayish-blue: hsl(233, 8%, 79%);
+$dark-grayish-blue: hsl(236, 13%, 42%);
+$very-dark-blue: hsl(240, 100%, 5%);
+
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.nav-container {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+
+        li {
+            padding-left: 20px;
+            list-style: none;
+            color: $dark-grayish-blue;
+            cursor: pointer;
+
+            &:hover {
+                color: $soft-red;
+            }
+        }
+    }
+
+    .hamburger-button {
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        display: none;
+    }
+
+   
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+
+    .mobile-menu {
+        display: none;
+    }
+
+    .main-content {
+
+        img {
+            width: 100%;
+        }
+
+        .text-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+
+            h1 {
+                font-family: 'InterBold';
+                font-size: 50px;
+                width: 50%;
+                flex-shrink: 0;
+                padding-right: 40px;
+            }
+
+            .text-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                p {
+                    color: $dark-grayish-blue;
+                    line-height: 1.6;
+                }
+
+                button {
+                    width: 150px;
+                    padding: 10px;
+                    background-color: $soft-red;
+                    border: none;
+                    outline: none;
+                    color: #fff;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    font-weight: 500;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $very-dark-blue;
+                    }
+
+                }
+            }
+        }
+    }
+
+    .sidebar {
+        background-color: $very-dark-blue;
+        width: 330px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: #fff;
+        margin-left: 25px;
+        padding: 30px 20px;
+
+        h1 {
+            font-family: 'InterBold';
+            color: $soft-orange;
+            font-size: 30px;
+        }
+
+        .sidebar-card {
+            padding-right: 15px;
+
+            h3 {
+                padding-bottom: 10px;
+                font-size: 17px;
+                cursor: pointer;
+
+                &:hover {
+                    color: $soft-orange;
+                }
+            }
+
+            p {
+                font-size: 13px;
+                font-weight: 100;
+                color: $grayish-blue;
+            }
+        }
+
+        .divider {
+            width: 100%;
+            height: 1px;
+            background-color: $grayish-blue;
+        }
+    }
+}
+
+
+
+.articles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 200px;
+
+    .article-card {
+        display: flex;
+        justify-content: space-between;
+        color: $dark-grayish-blue;
+        flex-grow: 0;
+        max-width: 350px;
+
+        img {
+            height: 100%;
+            width: auto;
+            max-height: 130px;
+            margin-right: 20px;
+        }
+
+        .article-number {
+            font-size: 30px;
+            color: $grayish-blue;
+        }
+
+        .article-title {
+            color: $very-dark-blue;
+            font-family: 'InterBold';
+            font-size: 18px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+
+            &:hover {
+                color: $soft-orange;
+            }
+        }
+
+        .article-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .article-text {
+            line-height: 1.6;
+        }
+    }
+}
+
+
+
+
+@media screen and (max-width: 1000px) {
+    .main-container {
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+
+        .mobile-menu {
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            right: -70%;
+            padding: 30px;
+            width: 70%;
+            position: absolute;
+            top: 0;
+            transition: all ease-in-out 0.3s;
+
+           &.open {
+            right: 0;
+            top: 0;
+            width: 70%;
+            transition: all ease-in-out 0.3s;
+           }
+
+
+            .mobile-nav-links {
+                display: flex;
+                flex-direction: column;
+                color: $very-dark-blue;
+
+
+                li {
+                    margin-bottom: 30px;
+                    list-style: none;
+
+                    &:hover {
+                        color: $soft-orange;
+                    }
+
+                }
+
+                .cat {
+                    margin-bottom: 300px;
+                }
+
+            }
+        }
+
+        .main-content .text-container {
+
+            .text-content {
+                button {
+                    margin-top: 20px;
+                    margin-bottom: 30px;
+                }
+            }
+
+            h1 {
+                width: 100%;
+            }
+        }
+
+        .sidebar {
+            width: 100%;
+            margin-left: 0;
+
+            .divider {
+                margin: 15px 0;
+            }
+        }
+    }
+
+    .text-container {
+        flex-direction: column;
+    }
+
+    .articles {
+        flex-direction: column;
+
+        .article-card {
+            max-width: 100%;
+            width: 100%;
+            margin-bottom: 20px;
+
+            .article-info {
+                flex-grow: 1;
+            }
+        }
+    }
+
+    .nav-container {
+
+
+        .nav-links {
+            display: none;
+        }
+
+        .hamburger-button {
+            display: block;
+        }
+
+
+    }
+
+
+}
+
+
+
